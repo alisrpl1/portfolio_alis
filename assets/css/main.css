@@ -1,0 +1,243 @@
+:root {
+  --bg: #faf8ff;
+  --accent: #b57edc;
+  --text: #2e1740;
+  --soft: rgba(255,255,255,0.8);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+/* HEADER */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #ffffff, #f7f0ff);
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-left h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+.subtitle {
+  margin: 10px 0 20px;
+  color: #6a528a;
+}
+
+
+ .desc {
+  font-size: 14px; /* ← ukuran diperkecil */
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+
+
+/* Tombol */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.btn.alt {
+  background: #a06be5;
+}
+
+.btn.alt2 {
+  background: #c091e6;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Foto */
+.hero-right {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-right img {
+  width: 360px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 0 40px rgba(181,126,220,0.2);
+  z-index: 2;
+}
+
+.photo-bg {
+  position: absolute;
+  width: 360px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(181,126,220,0.3), transparent 70%);
+  filter: blur(90px);
+  border-radius: 20px;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 99;
+}
+
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.popup-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 15px 0;
+}
+
+.popup-info p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+/* SKILL */
+.section {
+  text-align: center;
+  padding: 80px 10%;
+}
+
+.section h2 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--accent);
+  margin-bottom: 30px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skill-card {
+  background: var(--soft);
+  padding: 12px 25px;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-weight: 500;
+}
+
+/* KONTAK */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.9);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #9b67e8;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #6a528a;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 60px 5%;
+  }
+  .hero-right img {
+    width: 280px;
+    height: 340px;
+  }
+}
